@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   get '/auth/yahoo/callback' => 'user_sessions#create'
   root 'user_sessions#test'
+  get '/api_call' => 'users#api_call'
 end
