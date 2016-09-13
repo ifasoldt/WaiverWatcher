@@ -2,9 +2,9 @@ class UserSessionsController < ApplicationController
 
   def create
     @auth_info = request.env['omniauth.auth']
-    access_token = auth_info[:credentials][:token]
-    refresh_token = auth_info[:credentials][:refresh_token]
-    expires_at = auth_info[:credentials][:expires_at]
+    access_token = @auth_info[:credentials][:token]
+    refresh_token = @auth_info[:credentials][:refresh_token]
+    expires_at = @auth_info[:credentials][:expires_at]
     # session[:username] = @user.username
     render :output
   end
